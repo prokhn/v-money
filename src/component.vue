@@ -2,7 +2,7 @@
   <input type="tel"
          :value="formattedValue"
          @change="change"
-         v-money="{precision, decimal, thousands, prefix, suffix, allowBlank}"
+         v-money="{precision, decimal, thousands, prefix, suffix, allowBlank, min, max}"
          class="v-money" />
 </template>
 
@@ -34,6 +34,14 @@ export default {
     thousands: {
       type: String,
       default: () => defaults.thousands
+    },
+    max: {
+      type: Number,
+      default: () => defaults.max
+    },
+    min: {
+      type: Number,
+      default: () => defaults.min
     },
     prefix: {
       type: String,

@@ -83,6 +83,18 @@
         </label>
       </div>
     </div>
+    <div class="column col-2 col-sm-3">
+      <label class="form-label" for="min">Min</label>
+    </div>
+    <div class="column col-2 col-sm-3">
+      <input class="form-input" type="number" id="min" v-model="config.min" />
+    </div>
+    <div class="column col-2 col-sm-3">
+      <label class="form-label" for="max">Max</label>
+    </div>
+    <div class="column col-2 col-sm-3">
+      <input class="form-input" type="number" id="max" v-model="config.max" />
+    </div>
   </div>
 
   <hr />
@@ -113,7 +125,7 @@ export default {
       price: 1234.5,
       priceDirective: 5432.1,
       priceVuetify: 6789.10,
-      config: {decimal: ',', thousands: '.', prefix: 'R$ ', suffix: ' #', precision: 2, masked: false}
+      config: {decimal: ',', thousands: '.', prefix: 'R$ ', suffix: ' #', precision: 2, masked: false, max: 100000, min: -100000}
     }
   }
 }
