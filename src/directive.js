@@ -1,4 +1,4 @@
-import {format, unformat, setCursor, event} from './utils'
+import { format, unformat, setCursor, event } from './utils'
 import assign from './assign'
 import defaults from './options'
 
@@ -39,6 +39,8 @@ export default function (el, binding) {
     setCursor(el, el.value.length - opt.suffix.length)
   }
 
-  el.oninput()
-  el.dispatchEvent(event('input')) // force format after initialization
+  if (el.value !== '') {
+    el.oninput()
+    el.dispatchEvent(event('input')) // force format after initialization
+  }
 }
